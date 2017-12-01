@@ -1,3 +1,13 @@
+---
+title: plot APOE4 and TOMM40 gene expression
+notebook: EDA.ipynb
+nav_include: 1
+---
+
+## Contents
+{:.no_toc}
+*  
+{: toc}
 
 
 
@@ -38,11 +48,11 @@ df_full.head()
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -273,7 +283,6 @@ def scale_predictor(df, predictor):
 
 
 ```python
-# standardize gene expression data
 gene_cols = X_full.columns
 length = len(gene_cols) - 1
 index = 0
@@ -288,7 +297,6 @@ for gene in gene_cols:
 
 
 ```python
-# split into train and test
 np.random.seed(9001)
 msk = np.random.rand(len(df_full)) < 0.5
 df_train = df_full[msk]
@@ -304,7 +312,6 @@ y_test = df_test['Final_DX']
 
 
 ```python
-# compute correlations of Final_DX with all genes
 gene_corrs = []
 gene_cols = X_full.columns
 length = len(gene_cols) - 1
@@ -334,7 +341,6 @@ plt.show()
 
 
 ```python
-# store correlation data in dataframe
 gene_corr_df = pd.DataFrame()
 gene_corr_df['gene'] = gene_cols
 gene_corr_df['corr'] = gene_corrs
@@ -345,7 +351,6 @@ gene_corr_df = gene_corr_df.sort_values('corr')
 
 
 ```python
-# play around with this cell to look at using different predictors
 
 #'''
 n = 5
@@ -377,7 +382,6 @@ len(top_corrs)
 
 ```python
 top_corrs
-# 2 highly correlated genes are FCRL1 and STMN4, not sure exactly which ones below they are
 ```
 
 
@@ -389,11 +393,11 @@ top_corrs
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -478,7 +482,6 @@ topcor_mod['ytest'] = y_test.values
 
 
 ```python
-# multinomial logistic
 topcor_mod['logit_mn'] = LogisticRegressionCV(Cs=7, penalty='l2', random_state = 9001, multi_class='multinomial')
 topcor_mod['logit_mn'].fit(topcor_mod['Xtrain'], topcor_mod['ytrain'])
 
@@ -500,12 +503,11 @@ print('Random class. accuracy, test: ', accuracy_score(topcor_mod['ytest'], topc
     Logistic multinomial class. accuracy, test:  0.47619047619
     Random class. accuracy, train:  0.321100917431
     Random class. accuracy, test:  0.350649350649
-    
+
 
 
 
 ```python
-# correlations for genes that are known to be related to Alzheimer's
 print('TOMM40L', gene_corr_df.loc[gene_corr_df['gene'] == '11720197_a_at']['corr'].values[0])
 print('TOMM40', gene_corr_df.loc[gene_corr_df['gene'] == '11751070_x_at']['corr'].values[0])
 print('APOE', gene_corr_df.loc[gene_corr_df['gene'] == '11744068_x_at']['corr'].values[0])
@@ -515,7 +517,7 @@ print('APOE', gene_corr_df.loc[gene_corr_df['gene'] == '11744068_x_at']['corr'].
     TOMM40L 0.0245944185485
     TOMM40 0.0253219692686
     APOE 0.00227285034402
-    
+
 
 
 
@@ -532,11 +534,11 @@ df_full.head()
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -699,13 +701,10 @@ df_full.head()
 
 
 ```python
-# drop MRI columns
 df_no_MRIs = df_full.drop(df_full.columns[49435:49444], axis=1)
 
-# drop baselines except for Years_bl, Months_bl, Month, M
 df_no_bl = df_no_MRIs.drop(df_no_MRIs.columns[49436:49473], axis=1)
 
-# drop FDG, PIB, AV45
 df_no_PET = df_no_bl.drop(df_no_bl.columns[49408:49411], axis=1)
 
 df_no_PET.to_csv('FINAL_GENE_EXPRESSION.csv')
@@ -715,16 +714,12 @@ df_no_PET.to_csv('FINAL_GENE_EXPRESSION.csv')
 
 
 ```python
-# all cognitive test columns
 cog_cols = df_no_PET.columns[49408:49432]
 
-# cognitive test columns not including Ecog 
 #cog_cols = df_no_bl.columns[49411:49421]
 
-# find observations where cognitive test data is missing
 missing_cog = df_no_PET.index[df_no_PET[cog_cols].isnull().any(axis=1)==True].tolist()
 
-# drop rows where missing
 df_no_missing_cog = df_no_PET.drop(missing_cog)
 
 df_no_missing_cog.to_csv('DROPPED_GENE_EXPRESSION_UNIQUE.csv')
@@ -824,7 +819,6 @@ def plt_bar(col):
 
 
 ```python
-# APOE4 from ADNIMERGE
 plt_bar('APOE4')
 ```
 
@@ -836,7 +830,6 @@ plt_bar('APOE4')
 
 
 ```python
-# plot APOE4 and TOMM40 gene expression
 fig, ax = plt.subplots(1, 2, figsize=(8, 3), sharey=True);
 ax[0].hist(df['11744068_x_at']);
 ax[0].set_title('APOE4 = 11744068_x_at');
@@ -882,7 +875,7 @@ df_cog.head()
     
     See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
       after removing the cwd from sys.path.
-    
+
 
 
 
@@ -892,11 +885,11 @@ df_cog.head()
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -1279,8 +1272,8 @@ final_dx_df.head(20)
 
 
     Cognitive Test Correlations with Final_DX
-    
-    
+
+​    
 
 
 
@@ -1290,11 +1283,11 @@ final_dx_df.head(20)
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -1427,8 +1420,8 @@ dx_df.head(20)
 
 
     Cognitive Test Correlations with DX
-    
-    
+
+​    
 
 
 
@@ -1438,11 +1431,11 @@ dx_df.head(20)
     .dataframe thead tr:only-child th {
         text-align: right;
     }
-
+    
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
