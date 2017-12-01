@@ -1,5 +1,5 @@
 ---
-title: plot APOE4 and TOMM40 gene expression
+title: EDA
 notebook: EDA.ipynb
 nav_include: 1
 ---
