@@ -1,10 +1,7 @@
 ---
-title: Literature
+title: The Literature
 nav_include: 3
 ---
-
-The Literature
-===================
 
 blah blah blah.
 
