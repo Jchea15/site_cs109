@@ -2,9 +2,9 @@
 title: CS 109 Final Project
 ---
 
-## Project Statement
++## Project Statement
 
->"Did we just cure alzheimer's?" -- our group, right before we realzed we did not.
+->"Did we just cure alzheimer's?" -- our group, right before we realzed we did not.
 
 Based on the findings of our EDA, the overall project goal remains unchanged: using the above listed databases, we will attempt to isolate genes, whose expression correlates with cognitive impairment, and use them to create a predictive model. These initial findings indicate that the project is feasible. 
 
