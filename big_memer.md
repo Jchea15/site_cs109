@@ -1,7 +1,7 @@
 ---
 title: big memer
 notebook: big_memer.ipynb
-nav_include: 2
+nav_include: 1
 ---
 
 ```python
