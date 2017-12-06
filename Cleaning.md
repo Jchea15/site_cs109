@@ -1,10 +1,7 @@
 ---
-title: Cleaning
+title: The Cleaning
 nav_include: 4
 ---
-
-The Cleaning
-===================
 
 blah blah blah.
 
