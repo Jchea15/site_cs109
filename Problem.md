@@ -1,10 +1,7 @@
 ---
-title: Problem
+title: The Problem
 nav_include: 1
 ---
-
-The Problem
-===================
 
 blah blah blah.
 
