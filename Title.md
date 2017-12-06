@@ -1,4 +1,9 @@
-﻿The Problem
+---
+title: Problem
+nav_include: 1
+---
+
+The Problem
 ===================
 
 blah blah blah.
@@ -15,4 +20,3 @@ What's Alzheimer's?
 Why gene expression?
 -------------
 blah blah relatively inexpensive etc
-> Written with [StackEdit](https://stackedit.io/).
