@@ -1,10 +1,7 @@
 ---
-title: Data
+title: The Data
 nav_include: 2
 ---
-
-The Data
-===================
 
 blah blah blah.
 
