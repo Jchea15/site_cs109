@@ -23,7 +23,40 @@ Finally, standard data processing was performed. Types were corrected, features 
 
 Featuring: too many features!
 -------------
-what do the different features in the dataset mean
+blah blah brief intro plz
+
+| Feature  | what the heck it mean | purpose |
+| ------------- | ------------- | ------------- |
+| FDG  | Average 18F-fluorodeoxyglucose position emission tomography (PET)  | imaging for diagnosis |
+| PIB | Pittsburg compound B (PET radio traer for beta amyloid plaque) standard uptake value ratio | imaging for diagnosis |
+| AV45 | 18F-AV-45 (florbetapir) (PET radio tracer for beta amyloid plaques) standard uptake value ratio | imaging for diagnosis |
+| CDRSB | Clinical Dementia Rating Scale: Sum of Boxes, a measurement of dementia | cognitive tests for dementia |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
 
 
 Missingness and mindfulness
