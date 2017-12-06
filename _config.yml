@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
-title: Support Vector Olives
-description: Keeping Italian Olives Pure!
+title: Predicting Alzheimer's
+description: CS 109 Final Project
 baseurl:
 markdown: kramdown
 kramdown:
