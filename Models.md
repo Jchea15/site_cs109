@@ -1,10 +1,7 @@
 ---
-title:
+title: The Models
 nav_include: 5
 ---
-
-The Models
-===================
 
 blah blah blah.
 
