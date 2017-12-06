@@ -19,7 +19,7 @@ explanation of what the FUCK it is
 
 Gene expression and ADNIMERGE
 -------------
-what data we using and why
+what data we using and why, why ADNI2 and not ADNIGO/1, why not WSG
 
 
 Cognitive testing, and 50,000 genes, and Alzheimer's diagnosis, oh my!
