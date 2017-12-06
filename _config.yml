@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
-title: Predicting Alzheimer's
-description: CS 109 Final Project
+title: Diagnosis and Early Detection of Alzheimer's through Gene Expression
+description: For some patients, gene expression tests, particularly for a small number of targeted genes, may be relatively inexpensive and less invasive compared to traditional methods such as radiolabeled PET scans.
 baseurl:
 markdown: kramdown
 kramdown:
