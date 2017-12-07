@@ -59,4 +59,4 @@ To determine which genes' expression levels were correlated with a diagnosis of 
 
 The final thing we had to keep in mind was that gene expression likely corresponds to the *progression* of the disease as well. As such, we created a new column to track the change from the visit where gene expression data was collected to the final diagnosis. By doing so, we were able to control for variations in gene expression between individuals who either progressed or regressed in mental capacity. Thus, our models were only trained on the patients whose diagnosis did not change from diagnosis at the gene expression visit.
 
-To view our process, please see [our documented imputation](Imputation_notebook.md).
+To view our process, please see [our documented imputation of cognitive values](Imputation_notebook.md) and [our documented analysis for genes correlated to cognitive tests and diagnoses](Correlations_notebook.md).
