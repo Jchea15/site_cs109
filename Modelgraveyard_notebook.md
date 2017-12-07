@@ -951,4 +951,4 @@ print('Tree class. accuracy, test: ', accuracy_score(dt_class["ytest"], cv_dt.pr
 
 ![png](Model%20Graveyard_files/Model%20Graveyard_27_1.png)
 
-[Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/Model%20Graveyard.ipynb).
+[Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/Model%20Graveyard.ipynb)
