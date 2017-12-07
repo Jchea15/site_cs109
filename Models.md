@@ -16,29 +16,27 @@ The baseline model is a simple logistic regression using the 10 highest and 10 l
 
 Random and no-work models
 -------------
-We made 4 models to benchmark how our models are doing: predicting 0, 1, 2 randomly, all 0s, all 1s, and all 2s.
+We made 4 models to benchmark how our models are doing: predicting 0, 1, 2 randomly, all 0s, all 1s, and all 2s. The random model varied, but would do around 0.33 in accuracy, usually fluctuating within a 0.04 margin. For the other models, we got the following accuracies:
+Random class. accuracy, train:  0.305882352941
+Random class. accuracy, test:  0.373684210526
+All zeros class. accuracy, train:  0.411764705882
+All zeros class. accuracy, test:  0.415789473684
+All ones class. accuracy, train:  0.4
+All ones class. accuracy, test:  0.421052631579
+All twos class. accuracy, train:  0.188235294118
+All twos class. accuracy, test:  0.163157894737
+Gradient Boost with PCA and CV class. accuracy, train:  1.0
+Gradient Boost with PCA and CV class. accuracy, test:  0.521052631579
 
 
 Beyond the baseline
 -------------
+other models that we tried
 
 
-| Model                                    | Accuracy/(15?) | Thoughts |
-| ---------------------------------------- | -------------- | -------- |
-| Decision Tree with CV for max depth      | 0.311/0.363    |          |
-| Logistic one-vs-rest                     | 0.463/0.468    |          |
-| Logistic multinomial                     | 0.489/0.347    |          |
-| LDA                                      | 0.463/0.474    |          |
-| QDA                                      | 0.432/0.426    |          |
-| kNN                                      | 0.421/0.421    |          |
-| AdaBoost with PCA and CV for number of estimators | 0.432/0.421    |          |
-
-
-
-
-And the award goes to...
+A star performance
 -------------
-Our best model was a gradient boost algorithm with PCA and CV for number of estimators, with a test accuracy of 0.489.
+summarize performance for each one
 
 
 Abstinence is the best policy
