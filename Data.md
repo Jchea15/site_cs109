@@ -23,7 +23,7 @@ A diagnosis of 0 is cognitively normal, 1 is mild cognitive impairment, and 2 is
 
 ![corr_matrix](images/EDA_34_2.png)
 
-By looking at the last row of the correlation matrix, we can see how each cognitive test correlates to the final diagnosis. We know that diagnoses can be incorrect, so we can adjust by incorporating performance on cognitive tests which are correlated to final diagnosis. RAVLT_forgetting and self-reported Ecog are least correlated (study-partner-reported Ecog was more correlated), so we won’t include them.
+By looking at the second to last row of the correlation matrix, we can see how each cognitive test correlates to the final diagnosis. We know that diagnoses can be incorrect, so we can adjust by incorporating performance on cognitive tests which are correlated to final diagnosis. RAVLT_forgetting and self-reported Ecog are least correlated (study-partner-reported Ecog was more correlated), so we won’t include them.
 
 ![correlations](images/EDA_11_0.png)
 
