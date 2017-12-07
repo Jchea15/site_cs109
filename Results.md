@@ -10,11 +10,7 @@ After experimenting with many different models and combinations of models and di
 
 A gene-ius look at most correlated genes
 -------------
-Leah’s spreadsheet
-t-test/p-value notebook
-alpha=0.01 (116 genes)
-Table to categorize all genes
-More detailed description of top 10 genes (like Milestone 2)
+The genes we used for imputation were the ones that were most highly correlated with all of the cognitive tests. We used the genes where the p-value was less than 0.01 showing high statistical significance of the genes and thus promise that they would be useful in imputing AD diagnosis. We also wanted to see if we could identify novel genes that were relevant in AD. Below is a table of the 20 most highly correlated genes (CLIC1 occured 3 times, and MCEMP1 twice, so in fact only 17 genes are listed). Most of them have already been linked to Alzheimer's or can be linked to a gene that has been linked to Alzheimer's, which indicates that our correlation is in fact doing a good job - yay!
 
 | Gene Name | Average P value            | Connection to Alzheimer's | 
 |-----------|----------------------------|---------------------------| 
@@ -58,7 +54,7 @@ Down. Straight down to hell.
 Given the sample size was so small, this model can easily be improved with a larger sample size. Future research should seek to replicate these methods with the ADNI1/GO/3 databases. Moreover, it would be useful to attempt to create a new database with more standardized collection protocols to allow for easier analysis in future research. Finally, the failure of our attempt at a longitundinal model to predict the progression of Alzheimer's dementia hihglights a sorely lacking aspect of the databases: longitudinal data. Progression of the disease could very well be modeled by gene expression as well, but it is impossible to tell given the limited availible data.
 
 
-Footnones
+Footnotes
 -------------
 <a name="myfootnote1">1</a>: Skaper, S D, et al. “Intracellular Ion Channel CLIC1: Involvement in Microglia-Mediated β-Amyloid Peptide(1-42) Neurotoxicity.” Neurochemical Research., U.S. National Library of Medicine, Sept. 2013, www.ncbi.nlm.nih.gov/pubmed/23743620.
 
