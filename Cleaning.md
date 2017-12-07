@@ -11,8 +11,6 @@ blah blah blah.
 Preliminary data cleaning
 -------------
 
-just got ADNI2, removed longitudinal data, got final_dx, etc...basically the first email we sent
-
 In order build our data set, we extracted gene expression data for all ADNI2 patients, as well as their corresponding cognitive tests from ADNIMERGE. ADNI2 was used as it was the largest sample size for any single protocol in the ADNI database. The data was merged using the patient IDs, a value unique to each patient. 
 
 To control for differing numbers of visits, only the cognitive tests from the visit where gene expression data was taken were used. This allowed us to combine each patient's tests and gene expression into a single row respresenting one visit, vastly improving consistency in the collection protocols for the data.
@@ -23,15 +21,15 @@ Finally, standard data processing was performed. Types were corrected, features 
 
 Featuring: too many features!
 -------------
-blah blah brief intro plz
+Below is a table describing the features contained in the ADNIMERGE dataset. 'bl' stands for baseline, meaning the value from the very first visit. There were features describing study data such as participant ID numbers, visit code, and examination date which we did not include. We also did not consider the features describing demographics information such as age, sex, and ethnicity.
 
-| Feature  | what the heck it mean | purpose |
+| Feature  | Description | Purpose |
 | ------------- | ------------- | ------------- |
-| FDG, FDG_bl | average 18F-fluorodeoxyglucose position emission tomography (PET); 'bl' stands for baseline, meaning the value from the very first visit | imaging for beta amyloid plaques |
+| FDG, FDG_bl | average 18F-fluorodeoxyglucose position emission tomography (PET)  | imaging for beta amyloid plaques |
 | PIB, PIB_bl | Pittsburg compound B (PET radio tracer) standard uptake value ratio | imaging for beta amyloid plaques |
 | AV45, AV45_bl | 18F-AV-45 (florbetapir) (PET radio tracer) standard uptake value ratio | imaging for beta amyloid plaques |
 | CDRSB | Clinical Dementia Rating Scale: Sum of Boxes, a measurement of dementia | cognitive tests for dementia |
-| ADAS11, ADAS13, ADAS11_bl, ADAS13_bl | Alzheimer's Disease Assessment Scale, 11 or 13 items questionnaire; 'bl' stands for baseline | cognitive tests for dementia |
+| ADAS11, ADAS13, ADAS11_bl, ADAS13_bl | Alzheimer's Disease Assessment Scale, 11 or 13 items questionnaire | cognitive tests for dementia |
 | MMSE, MMSE_bl | mini mental state examination, tests memory, attention, and language | cognitive tests for dementia |
 | RAVLT_immediate, RAVLT_learning, RAVLT_forgetting, RALVT_perc_forgetting, all aforementioned \_bl | Rey Auditory Verbal Learning Test, examining short-term and longer-term verbal memory | cognitive tests for dementia |
 | FAQ, FAQ_bl | function activities questionnaires, which tests daily activities such as remembering appointments | cognitive tests for dementia |
