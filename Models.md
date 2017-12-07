@@ -23,15 +23,15 @@ Beyond the baseline
 -------------
 
 
-| Model                                    | Accuracy | Thoughts |
-| ---------------------------------------- | -------- | -------- |
-| Decision Tree with CV for max depth      | 0.311    |          |
-| Logistic one-vs-rest                     | 0.463    |          |
-| Logistic multinomial                     | 0.489    |          |
-| LDA                                      | 0.463    |          |
-| QDA                                      | 0.432    |          |
-| kNN                                      | 0.421    |          |
-| AdaBoost with PCA and CV for number of estimators | 0.432    |          |
+| Model                                    | Accuracy/(15?) | Thoughts |
+| ---------------------------------------- | -------------- | -------- |
+| Decision Tree with CV for max depth      | 0.311/0.363    |          |
+| Logistic one-vs-rest                     | 0.463/0.468    |          |
+| Logistic multinomial                     | 0.489/0.347    |          |
+| LDA                                      | 0.463/0.474    |          |
+| QDA                                      | 0.432/0.426    |          |
+| kNN                                      | 0.421/0.421    |          |
+| AdaBoost with PCA and CV for number of estimators | 0.432/0.421    |          |
 
 
 
