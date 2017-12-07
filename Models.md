@@ -21,12 +21,24 @@ We made 4 models to benchmark how our models are doing: predicting 0, 1, 2 rando
 
 Beyond the baseline
 -------------
-other models that we tried
+
+
+| Model                                    | Accuracy | Thoughts |
+| ---------------------------------------- | -------- | -------- |
+| Decision Tree with CV for max depth      | 0.311    |          |
+| Logistic one-vs-rest                     | 0.463    |          |
+| Logistic multinomial                     | 0.489    |          |
+| LDA                                      | 0.463    |          |
+| QDA                                      | 0.432    |          |
+| kNN                                      | 0.421    |          |
+| AdaBoost with PCA and CV for number of estimators | 0.432    |          |
+
+
 
 
 And the award goes to...
 -------------
-final model
+Our best model was a gradient boost algorithm with PCA and CV for number of estimators, with a test accuracy of 0.489.
 
 
 Abstinence is the best policy
