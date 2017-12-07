@@ -17,16 +17,16 @@ The baseline model is a simple logistic regression using the 10 highest and 10 l
 Random and no-work models
 -------------
 We made 4 models to benchmark how our models are doing: predicting 0, 1, 2 randomly, all 0s, all 1s, and all 2s. The random model varied, but would do around 0.33 in accuracy, usually fluctuating within a 0.04 margin. For the other models, we got the following accuracies:
-Random class. accuracy, train:  0.305882352941
-Random class. accuracy, test:  0.373684210526
-All zeros class. accuracy, train:  0.411764705882
-All zeros class. accuracy, test:  0.415789473684
-All ones class. accuracy, train:  0.4
-All ones class. accuracy, test:  0.421052631579
-All twos class. accuracy, train:  0.188235294118
-All twos class. accuracy, test:  0.163157894737
-Gradient Boost with PCA and CV class. accuracy, train:  1.0
-Gradient Boost with PCA and CV class. accuracy, test:  0.521052631579
+| Model | Dataset | Accuracy |
+| ------------- | ------------- | ------------- |
+| Random class. | train | 0.305882352941 |
+| Random class. | test | 0.373684210526 |
+| All zeros class. | train | 0.411764705882 |
+| All zeros class. | test | 0.415789473684 |
+| All ones class. | train | 0.4 |
+| All ones class. | test | 0.421052631579 |
+| All twos class. | train | 0.188235294118 |
+| All twos class. | test | 0.163157894737 |
 
 
 Beyond the baseline
