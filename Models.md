@@ -19,30 +19,26 @@ On your benchmarks!
 -------------
 We made four models to benchmark how our models are doing: (1) predicting 0, 1, 2 randomly; (2) all 0s; (3) all 1s; and (4) all 2s. We observed the following accuracies, using a random seed of 9001 for the random class:
 
-| Model | Dataset | Accuracy |
-| ------------- | ------------- | ------------- |
-| Random class. | train | 0.305882352941 |
-| Random class. | test | 0.373684210526 |
-| All zeros class. | train | 0.411764705882 |
-| All zeros class. | test | 0.415789473684 |
-| All ones class. | train | 0.4 |
-| All ones class. | test | 0.421052631579 |
-| All twos class. | train | 0.188235294118 |
-| All twos class. | test | 0.163157894737 |
+| Model | Train Accuracy | Test Accuracy |
+| ----- | ------------- | ------------- |
+| Random | 0.306 | 0.374 |
+| All zeros | 0.412 | 0.416 |
+| All ones | 0.400 | 0.421 |
+| All twos | 0.188 | 0.163 |
 
 
 Ready, set, go: beyond the baseline
 -------------
 
-| Model                                    | Test Accuracy | Thoughts |
-| ---------------------------------------- | ------------- | -------- |
-| Decision Tree with CV for max depth      | 0.363         |          |
-| Logistic one-vs-rest                     | 0.468         |          |
-| Logistic multinomial                     | 0.347         |          |
-| LDA                                      | 0.474         |          |
-| QDA                                      | 0.426         |          |
-| kNN                                      | 0.421         |          |
-| AdaBoost with PCA and CV for number of estimators | 0.421         |          |
+| Model                                    | Train Accuracy | Test Accuracy |
+| ---------------------------------------- | ------------- | ---------------|
+| Decision Tree with CV for max depth      | 1.000 | 0.363         |
+| Logistic one-vs-rest                     | 0.635 | 0.468         |
+| Logistic multinomial                     | 0.771 | 0.347         |
+| LDA                                      | 0.612 | 0.474         |
+| QDA                                      | 0.888 | 0.426         |
+| kNN                                      | 0.724 | 0.421         |
+| AdaBoost with PCA and CV for number of estimators | 0.665 | 0.421         |
 
 
 And the award goes to...
