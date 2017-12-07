@@ -11,7 +11,12 @@ The ultimate goal of this project was to create a model that is more predictive 
 Baseline model for comparison
 -------------
 
-The baseline model is a simple logistic regression using all of the availible data. This model managed to achieve a classifciation accuracy of ______. However, it is computationally complex and, as it fits a model with tens of thousands of predictors to a dataset of only 285 samples, prone to overfitting. For this reason, it was necessary to construct a simpler model, one that can predcit Alzheimer's dementia more accurately.
+The baseline model is a simple logistic regression using the 10 highest and 10 lowest correlated genes with fianl diagnosis on the training dataset. This model managed to achieve a classifciation accuracy of 0.360 on the testing dataset, and 0.648 on the training dataset. However, this model is very basic, as it is a linear model, and uses only 20 genes, correlated to a single response variable. This means that it may not include all genes that could help us predict diagnosis, and also it is likely that some of these genes are randomly correlated.
+
+
+Random and no-work models
+-------------
+We made 4 models to benchmark how our models are doing: predicting 0, 1, 2 randomly, all 0s, all 1s, and all 2s.
 
 
 Beyond the baseline
