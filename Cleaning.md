@@ -3,7 +3,7 @@ title: The Cleaning
 nav_include: 4
 ---
 
-blah blah blah.
+Before a model could be built, the data had to be cleaned and processed.
 
 ----------
 
