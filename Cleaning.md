@@ -45,8 +45,14 @@ Below is a table describing the features contained in the ADNIMERGE dataset. 'bl
 Missingness and mindfulness
 -------------
 
-Given the small sample size, it is critical that missing cognitive tests be imputed. However, for 8 patients, all cognitive tests were missing. This would make imputing the value of cognitive tests completely random, and thus useless. All of these patients were dropped. Following this, patients with one or two cognitive tests missing were imputed using the values of the other cognitive tests. In order to avoid imputation from harming the performance of our model, any feature which could not be imputed with an R^2 value of greater than .5 was dropped. 
+Given the small sample size, it is critical that missing cognitive tests be imputed. However, for 8 patients, all cognitive tests were missing . This would make imputing the value of cognitive tests completely random, and thus useless. All of these patients were dropped. The table below shows the index of patients with missing values, as well as the number of missing values and the feature names. 
 
-To determine which genes' expression levels were correlated with a diagnosis of Alzheimer's dementia, the correlation of each gene to each cognitive test (and diagnosis) was calculated. These values were then summed across the response variables in order to determine which genes were most highly correlated with gene expression. The genes whose correlations yielded a p value under .01 were used to build the model in order to reduce dimensionality.
+(images/Cleaning_table.png)
+
+Following this, patients with one or two cognitive tests missing were imputed using the values of the other cognitive tests. In order to avoid imputation from harming the performance of our model, any feature which could not be imputed with an R^2 value of greater than .5 was dropped. 
+
+To determine which genes' expression levels were correlated with a diagnosis of Alzheimer's dementia, the correlation of each gene to each cognitive test (and diagnosis) was calculated. These values were then summed across the response variables in order to determine which genes were most highly correlated with gene expression. The genes whose correlations yielded a p value under .01 were used to build the model in order to reduce dimensionality. Below is a histogram of the frequency of genes with a correlation standard deviations.
+
+(images/Cleaning_hist.png)
 
 The final thing we had to keep in mind was that gene expression likely corresponds to the *progression* of the disease as well. As such, we created a new column to track the change from the visit where gene expression data was collected to the final diagnosis. By doing so, we were able to control for variations in gene expression between individuals who either progressed or regressed in mental capacity. Thus, our models were only trained on the patients whose diagnosis did not change from diagnosis at the gene expression visit.
