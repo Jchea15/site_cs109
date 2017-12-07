@@ -24,9 +24,9 @@ Beyond the baseline
 other models that we tried
 
 
-A star performance
+And the award goes to...
 -------------
-summarize performance for each one
+final model
 
 
 Abstinence is the best policy
