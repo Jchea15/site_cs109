@@ -17,6 +17,7 @@ The baseline model is a simple logistic regression using the 10 highest and 10 l
 Random and no-work models
 -------------
 We made 4 models to benchmark how our models are doing: predicting 0, 1, 2 randomly, all 0s, all 1s, and all 2s. The random model varied, but would do around 0.33 in accuracy, usually fluctuating within a 0.04 margin. For the other models, we got the following accuracies:
+
 | Model | Dataset | Accuracy |
 | ------------- | ------------- | ------------- |
 | Random class. | train | 0.305882352941 |
