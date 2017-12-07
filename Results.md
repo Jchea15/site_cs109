@@ -42,8 +42,8 @@ To view our process, please see [our final model building documentation](Finalmo
 
 Strengths and shortcomings
 -------------
-take a wild guess bitch
-For more information, please see [our attempt at working with longitudinal data](Long_notebook.md).
+take a wild guess bitch. [PLEASE ELABORATE ON OTHER BULLSHIT]
+Our stretch goal was to see if we could predict progression of Alzheimer's based on current gene expression data. This would make sense, since aberrant gene expression would come before a patient becomes symptomatic, and it takes a while for the cascade to continue. We attempted this, however it does not appear as though we have enough information to really say anything meaningful about progression. Primarily, very few patients actually progressed in the time-frame that we were looking at. Therefore, our model got a training R^2 of 0.30 and a testing R^2 of -0.02 indicating that we are doing slightly worse even than just taking the average. Despite using dimensionality reduction (PCA), we are overfitting quite a lot, and not managing to fit at all on testing, and so it seems as if we simply don't have enough information to build a model. For more information, please see [our attempt at working with longitudinal data](Long_notebook.md).
 
 
 Where do we go from here?
