@@ -14,7 +14,7 @@ Baseline model for comparison
 The baseline model is a simple logistic regression using the 10 highest and 10 lowest correlated genes with fianl diagnosis on the training dataset. This model managed to achieve a classifciation accuracy of 0.360 on the testing dataset, and 0.648 on the training dataset. However, this model is very basic, as it is a linear model, and uses only 20 genes, correlated to a single response variable. This means that it may not include all genes that could help us predict diagnosis, and also it is likely that some of these genes are randomly correlated.
 
 
-Random and no-work models
+Random and lazy models
 -------------
 We made 4 models to benchmark how our models are doing: predicting 0, 1, 2 randomly, all 0s, all 1s, and all 2s. The random model varied, but would do around 0.33 in accuracy, usually fluctuating within a 0.04 margin. For the other models, we got the following accuracies:
 
