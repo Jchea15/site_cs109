@@ -11,12 +11,12 @@ blah blah blah.
 The ADNI database
 -------------
 
-explanation of what the FUCK it is
+The Alzheimer's Disease Neuroimaging Initiative is a program that collects cognitive data of a large number of people, ranging from cognitively normal over mildly cognitively impaired to having dementia. They collect this data at 63 sites across the United States and Canada according to a fixed protocol. ADNI has been running since 2004, and the protocols have slightly changed throughout the years, ranging from ADNI1, ADNIGO, ADNI2, and ADNI3, as research has evolved. The data is collected involves cognitive tests (a combination of on-site tests, self-reported assessment, and assessment by a person who is familiar with the patient), neuroimaging data, and biological data, including whole genome sequencing data, and, for ADNIGO onwards, also gene expression data. The purpose of ADNI is to provide data that can fuel future discoveries with regards to Alzheimer's. For instance, the ADNI whole genome sequencing data led to the identification of a novel genetic mutation that could lead to Alzheimer's - TOMM40.
 
 
 Gene expression and ADNIMERGE
 -------------
-what data we using and why, why ADNI2 and not ADNIGO/1, why not WSG
+We decided to look at gene expression data, so we used that csv. The ADNI_Gene_Expression_Profile.csv file contains each patient in the columns, including the patient ID (an ADNI-specific ID that is given to each data to help integrate over various datasets), which protocol they were studied under, and at which visit the samples that were analysed for gene expression were taken (encoded in an ADNI specific code). There is then information on sample quality, and a quantified number for expression level for each gene. There are nearly 50.000 genes listed. The gene expression data is with respect to mRNA expression. For each gene there is a so-called "ProbeSet" which is how ADNI classified the genes. This is complete. For most of the genes, there is additionally information on LocusLink and Symbol, which is the most commonly used name for the gene.
 
 
 Cognitive testing, and 50,000 genes, and Alzheimer's diagnosis, oh my!
