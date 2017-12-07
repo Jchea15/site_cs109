@@ -1,7 +1,5 @@
----
-title: EDA: Jupyter notebook
-notebook: EDA-cleaned.ipynb
----
+EDA: Jupyter notebook
+===================
 
 [Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/EDA-cleaned.ipynb)
 
