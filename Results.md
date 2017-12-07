@@ -3,7 +3,7 @@ title: The Results
 nav_include: 6
 ---
 
-After experimenting with many different models and combinations of models and dimensionality reduction techniques, the model with the best performance was a gradient boosted Decision Tree using PCA.
+After experimenting with many different models and combinations of models and dimensionality reduction techniques, the model with the best performance was a gradient boosted Decision Tree using PCA. We then took this model a step further and implemented a cost-minimizing abstention feature.
 
 ----------
 
@@ -42,16 +42,24 @@ To view our process, please see [our final model building documentation](Finalmo
 
 Strengths and shortcomings
 -------------
-take a wild guess bitch. [PLEASE ELABORATE ON OTHER BULLSHIT]
+
 Our stretch goal was to see if we could predict progression of Alzheimer's based on current gene expression data. This would make sense, since aberrant gene expression would come before a patient becomes symptomatic, and it takes a while for the cascade to continue. We attempted this, however it does not appear as though we have enough information to really say anything meaningful about progression. Primarily, very few patients actually progressed in the time-frame that we were looking at. Therefore, our model got a training R^2 of 0.30 and a testing R^2 of -0.02 indicating that we are doing slightly worse even than just taking the average. Despite using dimensionality reduction (PCA), we are overfitting quite a lot, and not managing to fit at all on testing, and so it seems as if we simply don't have enough information to build a model. For more information, please see [our attempt at working with longitudinal data](Long_notebook.md).
+
+As for the final model and final model with abstention, both models suffer from the same prediminant weakness: a relatively low classification accuracy. The final model can reach a classification accuracy of _______, while the model which can abstain achieves ______. Given both models hover around 45% accuracy for a three-class classification problem, they do outperfom baseline and random models, but are not accurate enough to be truly useful predictors. This issue could be solved if more training data were made availible (see below). 
+
+With the cost-minimizing abstaining model, the model does not predict a significant number of patients (________), meaning its uses are more in line with those of institutions prioritizing reducing costs over delivering a diagnosis to every patient. This limits its applications, but it is useful in the correct cirumstance.
+
+While both models have their drawbacks, however, they also both are a significant improvement over previous methods. As mentioned above, both models outperform random chance and baseline models, while remaning relatively computationally simple and cost-effective. In particular, the models allow doctors to more accurately diagnose Alzheimer's dementia than in previous years, in  a cheap and objective manner. Diagnosis no longer requires the use of subjective cognitive tests, nor expensive PET scans.
 
 
 Where do we go from here?
 -------------
-future directions
-Down. Straight down to hell.
 
-Given the sample size was so small, this model can easily be improved with a larger sample size. Future research should seek to replicate these methods with the ADNI1/GO/3 databases. Moreover, it would be useful to attempt to create a new database with more standardized collection protocols to allow for easier analysis in future research. Finally, the failure of our attempt at a longitundinal model to predict the progression of Alzheimer's dementia hihglights a sorely lacking aspect of the databases: longitudinal data. Progression of the disease could very well be modeled by gene expression as well, but it is impossible to tell given the limited availible data.
+Given the sample size was so small, this model can easily be improved with a larger sample size. Future research should seek to replicate these methods with the ADNI1/GO/3 databases. As in many data science problems, more data is always better, and given more time, reapplying these methods to a larger sample size would likely help model performance.
+
+Moreover, it would be useful to attempt to create a new database with more standardized collection protocols to allow for easier analysis in future research. The lack of data was a significant hurdle to overcome in building the model and likely severely impacted its performance. This would not have been an issue if collection protocols were standardised and different databases did not require a complete rebuilding of the model.
+
+Finally, the failure of our attempt at a longitundinal model to predict the progression of Alzheimer's dementia hihglights a sorely lacking aspect of the databases: longitudinal data. Progression of the disease could very well be modeled by gene expression as well, but it is impossible to tell given the limited availible data.
 
 
 Footnotes
