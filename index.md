@@ -1,6 +1,8 @@
 ---
+layout: page
 title: Home
 subtitle: Diagnosis and Early Detection of Alzheimer's through Gene Expression
+use-site-title: true
 ---
 ## Project Statement
 
