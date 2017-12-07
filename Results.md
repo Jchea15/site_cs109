@@ -26,7 +26,7 @@ To view our process, please see [our final model building documentation](Finalmo
 Strengths and shortcomings
 -------------
 take a wild guess bitch
-For more information, please see [our attempt at working with longitudinal](Long_notebook.md).
+For more information, please see [our attempt at working with longitudinal data](Long_notebook.md).
 
 
 Where do we go from here?
