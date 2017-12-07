@@ -26,6 +26,7 @@ Featuring: too many features!
 Below is a table describing the features contained in the ADNIMERGE dataset. 'bl' stands for baseline, meaning the value from the very first visit. There were features describing study data such as participant ID numbers, visit code, and examination date which we did not include. We also did not consider the features describing demographics information such as age, sex, and ethnicity.
 
 | Feature  | Description | Purpose |
+| ------------- | ------------- | ------------- |
 | FDG, FDG_bl | average 18F-fluorodeoxyglucose position emission tomography (PET)  | imaging for beta amyloid plaques |
 | PIB, PIB_bl | Pittsburg compound B (PET radio tracer) standard uptake value ratio | imaging for beta amyloid plaques |
 | AV45, AV45_bl | 18F-AV-45 (florbetapir) (PET radio tracer) standard uptake value ratio | imaging for beta amyloid plaques |
