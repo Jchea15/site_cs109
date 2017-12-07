@@ -1,7 +1,5 @@
----
-title: Cleaning: Jupyter notebook
-notebook: Data_Cleaning.ipynb
----
+Cleaning: Jupyter notebook
+===================
 
 [Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/Data_Cleaning.ipynb)	
 
