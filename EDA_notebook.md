@@ -1,4 +1,4 @@
-
+[Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/EDA-cleaned.ipynb)
 
 ```python
 cd ~/Desktop/CS109/Data
@@ -754,5 +754,3 @@ plt.yticks(range(26), df_cog.columns, fontsize = 'large');
 
 
 ![png](EDA-cleaned_files/EDA-cleaned_15_2.png)
-
-[Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/EDA-cleaned.ipynb)
