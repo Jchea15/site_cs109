@@ -3,7 +3,7 @@ title: The Problem
 nav_include: 1
 ---
 
-Alzheimer's is the third-leading cause of death for the elderly in the United States. Every year, \$236B is spent on hte costs associated with this disease. However, despite its prevelance, there is as of yet no realiable method to diagnose Alzheimer's before death, nor even predcit those who may be more susceptible to the disease. Using gene expression data, we hope to be able to construct a model that can more accurately target those who may be more prone to the disease in order to seek treatment earlier.
+Alzheimer's is the third-leading cause of death for the elderly in the United States. Every year, \$236B is spent on the costs associated with this disease. However, despite its prevelance, there is as of yet no realiable method to diagnose Alzheimer's before death, nor even predcit those who may be more susceptible to the disease. Using gene expression data, we hope to be able to construct a model that can more accurately target those who may be more prone to the disease in order to seek treatment earlier.
 
 ----------
 
