@@ -1,5 +1,6 @@
 ---
-title: Diagnosis and Early Detection of Alzheimer's through Gene Expression
+title: Alzheimer's through Gene Expression
+nav_include: 0
 ---
 ## Project Statement
 
