@@ -13,9 +13,9 @@ Preliminary data cleaning
 
 In order build our data set, we extracted gene expression data for all ADNI2 patients, as well as their corresponding cognitive tests from ADNIMERGE. ADNI2 was used as it was the largest sample size for any single protocol in the ADNI database. The data was merged using the patient IDs, a value unique to each patient. 
 
-To control for differing numbers of visits, only the cognitive tests from the visit where gene expression data was taken were used. This allowed us to combine each patient's tests and gene expression into a single row respresenting one visit, vastly improving consistency in the collection protocols for the data.
+To control for differing numbers of visits, only the cognitive tests from the visit where gene expression data was taken were used. This allowed us to combine each patient's tests and gene expression into a single row representing one visit, vastly improving consistency in the collection protocols for the data.
 
-From there, we recorded the dates of the patient's first and last visits, the days in between the visits, the final diagnosis (of Alzheimer's dimentia), and the diagnosis on the day of the gene expression collection (or most recent diagnosis, since a null value was present for patients with no updated diagnosis). This allowed us to have a complete picture of the patients vists to the doctor, and the progression of their disease, while minimizing the amount of logitundinal data required.
+From there, we recorded the dates of the patient's first and last visits, the days in between the visits, the final diagnosis (of Alzheimer's dementia), and the diagnosis on the day of the gene expression collection (or most recent diagnosis, since a null value was present for patients with no updated diagnosis). This allowed us to have a complete picture of the patients visits to the doctor, and the progression of their disease, while minimizing the amount of longitudinal data required.
 
 Finally, standard data processing was performed. Types were corrected, features were standardized and diagnoses were converted to numerical representations.
 
