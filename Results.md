@@ -3,6 +3,37 @@ title: The Results
 nav_include: 6
 ---
 
+----------
+
+
+A gene-ius look at most correlated genes
+-------------
+The genes we used for imputation were the ones that were most highly correlated with all of the cognitive tests. We used the genes where the p-value was less than 0.01 showing high statistical significance of the genes and thus promise that they would be useful in imputing AD diagnosis. We also wanted to see if we could identify novel genes that were relevant in AD. Below is a table of the 20 most highly correlated genes (CLIC1 occurred 3 times, and MCEMP1 twice, so in fact only 17 genes are listed). Most of them have already been linked to Alzheimer's or can be linked to a gene that has been linked to Alzheimer's, which indicates that our correlation is in fact doing a good job - yay!
+
+| Gene Name | Average P value            | Connection to Alzheimer's | 
+|-----------|----------------------------|---------------------------| 
+| CLIC1     | 1.9E-05, 3.67E-05, 2.1E-04 | "Amyloid β-peptide (Aβ) accumulation in plaques is a hallmark of familial Alzheimer disease. The truncated Aβ25-35 species was shown previously to increase the expression of CLIC1 chloride conductance in cortical microglia and to provoke microglial neurotoxicity." <sup>[1](#myfootnote1)</sup> (Skaper, S D, et al. 2013) | 
+| HLA-DQB1  | 3.60E-04                   | This is a type of MHCII protein, MHCII proteins have previously been associated with Alzheimer's: "Marked increases in MHC class II-expressing microglia have been shown in many neuropathologic disorders, including Alzheimer's disease (AD)." <sup>[2](#myfootnote2)</sup> (Perlmutter et all 1992) | 
+| CD177     | 7.55E-04                   | Study found that CD177+ neutrophil population significantly increased in mAD (= mild stage Alzheimer's disease) patients (p < 0.05)." <sup>[3](#myfootnote3)</sup> (Page et al. 2015) | 
+| MCEMP1    | 8.2E-04, 2.0E-03           | Associated with strokes so this may be a correlation unrelated to Alzheimer's, <sup>[4](#myfootnote4)</sup> (Wood, 2016) | 
+| LRRFIP1   | 9.36E-04                   | The DNA sensor LRRFIP1 mediates the production of type I IFN via a β-catenin-dependent pathway, which mediates neuro-inflammatory events in models of Alzheimer's disease. <sup>[5](#myfootnote5)</sup> (Yang et al, 2010; Taylor et al, 2014) | 
+| PEX5      | 1.26E-03                   | "The molecular biological analysis showed that the changes of these transcription factor activities and their target genes in the interactions of signaling proteins in cell cycle, chronic inflammation and immune response play important roles in the deterioration of Alzheimer's Disease." (on group of genes including PEX5) <sup>[6](#myfootnote6)</sup> (Kong et al., 2017)                    | 
+| P2RY10    | 1.67E-03                   | Expressed in lymphoid cells, immunological, involved in Calcium influx ativation of diacylglyceride-dependent protein kinases. "Alzheimer's disease is a dementia characterised by aberrant calcium signalling." <sup>[7](#myfootnote7)</sup> (Adrian et al., 2000; Ghosh et al., 2015)                                           | 
+| CRAMP1L   | 1.85E-03                   | No information except RNA & protein expressed highly in male tissues, and protein expressed highly in brain according to human protein atlas. Can't infer connection to AD. | 
+| NCAPD2    | 1.91E-03                   | Regulates chromatin during the cell cycle. Gene polymorphisms in NCAPD2 are associated with Alzheimer's disease <sup>[8](#myfootnote8)</sup> (Zhang et al. 2014) | 
+| NTHL1     | 2.03E-03                   | DNA damage repair, specifically involved in a DNA repair pathway that is known to be involved in AD <sup>[9](#myfootnote9)</sup> (Ray et al., 2007) | 
+| ANXA3     | 2.09E-03                   | Leads to white matter inflammation, as is the case in Alzheimer's <sup>[10](#myfootnote10)</sup> (Raj et al., 2017) Also associated with Huntington's disease, a different neurological disease. | 
+| TFAP4     | 2.26E-03                   | Transcribes AP4 Complex subunits, which mediate sorting of APP (Alzheimer's disease amyloid precursor protein) <sup>[11](#myfootnote11)</sup> (Burgos et al., 2010 | 
+| VWA9      | 2.45E-03                   | Probably involved in transcription of snRNAs U1, and U2, and "aggregates of U1 snRNA and U1 small nuclear ribonucleoproteins represent a new pathological hallmark of AD" <sup>[12](#myfootnote12)</sup> (Hales et al., 2014) | 
+| NFATC3    | 2.46E-03                   | "Inhibition of NFAT pathway found to alleviate amyloid beta neurotoxicity in a mouse model of Alzheimer's disease." <sup>[13](#myfootnote13)</sup> (Hudry et al., 2012) | 
+| WFDC1     | 2.57E-03                   | Previously found negatively correlated with AD <sup>[14](#myfootnote14)</sup> (Miller et al., 2013) | 
+| PPP2R5A   | 2.71E-03                   | Can modulate PP2A  catalytic activity, and "alterations in PP2A regulators and PP2A catalytic activity, subunit expression, methylation and/or phosphorylation, have been reported in AD-affected brain regions" <sup>[15](#myfootnote15)</sup> (Sontag et al., 2014) | 
+| TMEM241   | 2.72E-03                   | a ubiquitous sugar transporter protein, gene variant suggested to contribute to increased triglyceride levels in Mexicans. Observed relation between high triglycerides, diabetes, and vascular dementia <sup>[16](#myfootnote16)</sup> (Raffaitin et al., 2009; Rodr’guez et al., 2016) | 
+
+
+
+Diagnosing and detecting Alzheimer's
+-------------
 After experimenting with many different models and combinations of models and dimensionality reduction techniques, the model with the best performance was a gradient boosted Decision Tree using PCA. For this we reached the following accuracies:
 
 Random class. accuracy, train:  0.305882352941
@@ -35,38 +66,6 @@ We then took this model a step further and implemented a cost-minimizing abstent
 
 We tested out our gradient boosted Decision Tree using PCA on the data we had left out, and saw that we couldn't our model captured a moment in time, and not progressing data. Our accuracy for the patients who's diagnosis improved was 0.33, and the accuracy for patients who's diagnosis got worse was 0.39. This shows that our model does not capture longitudinalness.
 
-----------
-
-
-A gene-ius look at most correlated genes
--------------
-The genes we used for imputation were the ones that were most highly correlated with all of the cognitive tests. We used the genes where the p-value was less than 0.01 showing high statistical significance of the genes and thus promise that they would be useful in imputing AD diagnosis. We also wanted to see if we could identify novel genes that were relevant in AD. Below is a table of the 20 most highly correlated genes (CLIC1 occurred 3 times, and MCEMP1 twice, so in fact only 17 genes are listed). Most of them have already been linked to Alzheimer's or can be linked to a gene that has been linked to Alzheimer's, which indicates that our correlation is in fact doing a good job - yay!
-
-| Gene Name | Average P value            | Connection to Alzheimer's | 
-|-----------|----------------------------|---------------------------| 
-| CLIC1     | 1.9E-05, 3.67E-05, 2.1E-04 | "Amyloid β-peptide (Aβ) accumulation in plaques is a hallmark of familial Alzheimer disease. The truncated Aβ25-35 species was shown previously to increase the expression of CLIC1 chloride conductance in cortical microglia and to provoke microglial neurotoxicity." <sup>[1](#myfootnote1)</sup> (Skaper, S D, et al. 2013) | 
-| HLA-DQB1  | 3.60E-04                   | This is a type of MHCII protein, MHCII proteins have previously been associated with Alzheimer's: "Marked increases in MHC class II-expressing microglia have been shown in many neuropathologic disorders, including Alzheimer's disease (AD)." <sup>[2](#myfootnote2)</sup> (Perlmutter et all 1992) | 
-| CD177     | 7.55E-04                   | Study found that CD177+ neutrophil population significantly increased in mAD (= mild stage Alzheimer's disease) patients (p < 0.05)." <sup>[3](#myfootnote3)</sup> (Page et al. 2015) | 
-| MCEMP1    | 8.2E-04, 2.0E-03           | Associated with strokes so this may be a correlation unrelated to Alzheimer's, <sup>[4](#myfootnote4)</sup> (Wood, 2016) | 
-| LRRFIP1   | 9.36E-04                   | The DNA sensor LRRFIP1 mediates the production of type I IFN via a β-catenin-dependent pathway, which mediates neuro-inflammatory events in models of Alzheimer's disease. <sup>[5](#myfootnote5)</sup> (Yang et al, 2010; Taylor et al, 2014) | 
-| PEX5      | 1.26E-03                   | "The molecular biological analysis showed that the changes of these transcription factor activities and their target genes in the interactions of signaling proteins in cell cycle, chronic inflammation and immune response play important roles in the deterioration of Alzheimer's Disease." (on group of genes including PEX5) <sup>[6](#myfootnote6)</sup> (Kong et al., 2017)                    | 
-| P2RY10    | 1.67E-03                   | Expressed in lymphoid cells, immunological, involved in Calcium influx ativation of diacylglyceride-dependent protein kinases. "Alzheimer's disease is a dementia characterised by aberrant calcium signalling." <sup>[7](#myfootnote7)</sup> (Adrian et al., 2000; Ghosh et al., 2015)                                           | 
-| CRAMP1L   | 1.85E-03                   | No information except RNA & protein expressed highly in male tissues, and protein expressed highly in brain according to human protein atlas. Can't infer connection to AD. | 
-| NCAPD2    | 1.91E-03                   | Regulates chromatin during the cell cycle. Gene polymorphisms in NCAPD2 are associated with Alzheimer's disease <sup>[8](#myfootnote8)</sup> (Zhang et al. 2014) | 
-| NTHL1     | 2.03E-03                   | DNA damage repair, specifically involved in a DNA repair pathway that is known to be involved in AD <sup>[9](#myfootnote9)</sup> (Ray et al., 2007) | 
-| ANXA3     | 2.09E-03                   | Leads to white matter inflammation, as is the case in Alzheimer's <sup>[10](#myfootnote10)</sup> (Raj et al., 2017) Also associated with Huntington's disease, a different neurological disease. | 
-| TFAP4     | 2.26E-03                   | Transcribes AP4 Complex subunits, which mediate sorting of APP (Alzheimer's disease amyloid precursor protein) <sup>[11](#myfootnote11)</sup> (Burgos et al., 2010 | 
-| VWA9      | 2.45E-03                   | Probably involved in transcription of snRNAs U1, and U2, and "aggregates of U1 snRNA and U1 small nuclear ribonucleoproteins represent a new pathological hallmark of AD" <sup>[12](#myfootnote12)</sup> (Hales et al., 2014) | 
-| NFATC3    | 2.46E-03                   | "Inhibition of NFAT pathway found to alleviate amyloid beta neurotoxicity in a mouse model of Alzheimer's disease." <sup>[13](#myfootnote13)</sup> (Hudry et al., 2012) | 
-| WFDC1     | 2.57E-03                   | Previously found negatively correlated with AD <sup>[14](#myfootnote14)</sup> (Miller et al., 2013) | 
-| PPP2R5A   | 2.71E-03                   | Can modulate PP2A  catalytic activity, and "alterations in PP2A regulators and PP2A catalytic activity, subunit expression, methylation and/or phosphorylation, have been reported in AD-affected brain regions" <sup>[15](#myfootnote15)</sup> (Sontag et al., 2014) | 
-| TMEM241   | 2.72E-03                   | a ubiquitous sugar transporter protein, gene variant suggested to contribute to increased triglyceride levels in Mexicans. Observed relation between high triglycerides, diabetes, and vascular dementia <sup>[16](#myfootnote16)</sup> (Raffaitin et al., 2009; Rodr’guez et al., 2016) | 
-
-
-
-Diagnosing and detecting Alzheimer's
--------------
-Summarize model results
 To view our process, please see [our final model building documentation](Finalmodel_notebook.md).
 
 
