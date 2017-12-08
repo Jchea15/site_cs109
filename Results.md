@@ -3,7 +3,35 @@ title: The Results
 nav_include: 6
 ---
 
-After experimenting with many different models and combinations of models and dimensionality reduction techniques, the model with the best performance was a gradient boosted Decision Tree using PCA. We then took this model a step further and implemented a cost-minimizing abstention feature.
+After experimenting with many different models and combinations of models and dimensionality reduction techniques, the model with the best performance was a gradient boosted Decision Tree using PCA. For this we reached the following accuracies:
+
+Random class. accuracy, train:  0.305882352941
+
+Random class. accuracy, test:  0.373684210526
+
+All zeros class. accuracy, train:  0.411764705882
+
+All zeros class. accuracy, test:  0.415789473684
+
+All ones class. accuracy, train:  0.4
+
+All ones class. accuracy, test:  0.421052631579
+
+All twos class. accuracy, train:  0.188235294118
+
+All twos class. accuracy, test:  0.163157894737
+
+Gradient Boost with PCA and CV class. accuracy, train:  1.0
+
+Gradient Boost with PCA and CV class. accuracy, test:  0.468421052632
+
+Gradient Boost with PCA and CV class. accuracy, improved DX:  0.333333333333
+
+Gradient Boost with PCA and CV class. accuracy, worsened DX:  0.39393939393
+
+Showing that our model does significantly better than any of the "lazy" models or randomness. Thus we are predicting Alzheimer's diagnosis to a certain degree, though are not able to beat the 70%-90% accuracy that using cognitive tests provide.
+
+We then took this model a step further and implemented a cost-minimizing abstention feature.
 
 We tested out our gradient boosted Decision Tree using PCA on the data we had left out, and saw that we couldn't our model captured a moment in time, and not progressing data. Our accuracy for the patients who's diagnosis improved was 0.33, and the accuracy for patients who's diagnosis got worse was 0.39. This shows that our model does not capture longitudinalness.
 
