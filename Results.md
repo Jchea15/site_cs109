@@ -3,9 +3,6 @@ title: The Results
 nav_include: 6
 ---
 
-----------
-
-
 A gene-ius look at most correlated genes
 -------------
 The genes we used for imputation were the ones that were most highly correlated with all of the cognitive tests. We used the genes where the p-value was less than 0.01 showing high statistical significance of the genes and thus promise that they would be useful in imputing AD diagnosis. We also wanted to see if we could identify novel genes that were relevant in AD. Below is a table of the 20 most highly correlated genes (CLIC1 occurred 3 times, and MCEMP1 twice, so in fact only 17 genes are listed). Most of them have already been linked to Alzheimer's or can be linked to a gene that has been linked to Alzheimer's, which indicates that our correlation is in fact doing a good job - yay!
