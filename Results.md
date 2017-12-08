@@ -5,6 +5,8 @@ nav_include: 6
 
 After experimenting with many different models and combinations of models and dimensionality reduction techniques, the model with the best performance was a gradient boosted Decision Tree using PCA. We then took this model a step further and implemented a cost-minimizing abstention feature.
 
+We tested out our gradient boosted Decision Tree using PCA on the data we had left out, and saw that we couldn't our model captured a moment in time, and not progressing data. Our accuracy for the patients who's diagnosis improved was 0.33, and the accuracy for patients who's diagnosis got worse was 0.39. This shows that our model does not capture longitudinalness.
+
 ----------
 
 
