@@ -33,9 +33,7 @@ Ready, set, go: beyond the baseline
 | Model                                    | Train Accuracy | Test Accuracy |
 | ---------------------------------------- | -------------- | ------------- |
 | Decision Tree with CV for max depth      | 1.000          | 0.363         |
-| Logistic One-Vs-Rest                     | 0.635          | 0.468         |
 | Logistic Multinomial                     | 0.771          | 0.347         |
-| LDA                                      | 0.612          | 0.474         |
 | QDA                                      | 0.888          | 0.426         |
 | kNN                                      | 0.724          | 0.421         |
 | AdaBoost with PCA and CV for number of estimators | 0.665          | 0.421         |
