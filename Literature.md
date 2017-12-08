@@ -3,7 +3,7 @@ title: The Literature
 nav_include: 3
 ---
 
-It's lit~
+Previous research has guided our own.
 
 ----------
 
@@ -20,7 +20,7 @@ TOMM40 and APOE are genes that are known to be associated with Alzheimer’s. Sp
 
 May I unzip your genes?
 -------------
-We did more literature review to validate that the genes we identified were indeed significant. This review is [on the final results page](Results.md)
+We did more literature review to validate that the genes we identified were indeed significant. This review is in [the final results page](Results.md)
 
 
 Footnotes
