@@ -17,7 +17,7 @@ To view our process, please see [our baseline model immediately after preliminar
 
 On your benchmarks!
 -------------
-We made four models to benchmark how our models are doing: (1) predicting 0, 1, 2 randomly; (2) all 0s; (3) all 1s; and (4) all 2s. We observed the following accuracies, using a random seed of 9001 for the random class:
+We made four models to benchmark how our models are doing: (1) predicting 0, 1, 2 randomly; (2) all 0s; (3) all 1s; and (4) all 2s. We observed the following ac curacies, using a random seed of 9001 for the random class:
 
 | Model     | Train Accuracy | Test Accuracy |
 | --------- | -------------- | ------------- |
@@ -47,7 +47,7 @@ Our best model was a gradient boost algorithm with PCA and CV for number of esti
 Abstinence is the best policy
 -------------
 
-While the model performed well, it can be improved. The model predicts based upon the probabilities that a given patient is of a certain diagnosis. This means that a certain patient can be misdiagnosed if they are even just above the probability threshold for a given diagnosis. As the model has a decent variance, it is likely that a small number of patients with diagnosis proabilities' near the threshold will be misdiagnosed. When it comes to medical misdaignoses, this can lead to significant uncessary expenses, and should be minimized. 
+While the model performed well, it can be improved. The model predicts based upon the probabilities that a given patient is of a certain diagnosis. This means that a certain patient can be misdiagnosed if they are even just above the probability threshold for a given diagnosis. As the model has a decent variance, it is likely that a small number of patients with diagnosis probabilities' near the threshold will be misdiagnosed. When it comes to medical misdiagnoses, this can lead to significant unnecessary expenses, and should be minimized. 
 
 Thus, we implemented a version of the model that is able to abstain in order to minimize the cost of a diagnosis. A misdiagnosis can be extremely costly, whether a false positive or false negative, in incorrect treatment, lack of early intervention, and so on; averaging potential expenditures resulted in an estimate of $12000. Abstaining from diagnosis, on the other hand, would incur an opportunity cost of approximately $6850 due to the visits to specialists and conventional diagnosis methods. In both cases, the already-paid-for cost of the genetic expression testing was considered. The model tests models with varying thresholds and then calculates the costs, outputting the optimum thresholds to minimize the costs.
 
