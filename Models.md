@@ -41,7 +41,7 @@ Ready, set, go: beyond the baseline
 
 And the award goes to...
 ------------------
-Our best model was a gradient boost algorithm with PCA and CV for number of estimators, with a test accuracy of 0.489.
+Our best model was a gradient boost algorithm with PCA and CV for number of estimators, with a test accuracy of 0.463.
 
 
 Abstinence is the best policy
@@ -51,6 +51,6 @@ While the model performed well, it can be improved. The model predicts based upo
 
 Thus, we implemented a version of the model that is able to abstain in order to minimize the cost of a diagnosis. A misdiagnosis can be extremely costly, whether a false positive or false negative, in incorrect treatment, lack of early intervention, and so on; averaging potential expenditures resulted in an estimate of $12000. Abstaining from diagnosis, on the other hand, would incur an opportunity cost of approximately $6850 due to the visits to specialists and conventional diagnosis methods. In both cases, the already-paid-for cost of the genetic expression testing was considered. The model tests models with varying thresholds and then calculates the costs, outputting the optimum thresholds to minimize the costs.
 
-This model had a **insert bullshit I don't wanna write here**
+This final thresholds for the model were 0.6979 for a diagnosis of cognitively normal, 0.5805 for MCI, and 0.9813 for dementia. Without thresholds, the accuracy was 0.42 and the cost per patient was $7.764,71; with thresholds, diagnosing 27% of patients, the accuracy was 0.87 and the cost per patient was $6.081,47, an improvement of nearly one thousand dollars per patient! The next-best model incurred a cost per patient of $10.042,11, so our thresholded model improved the costs by over three thousand dollars per patient: a 32% decrease!
 
 To view our process, please see [our documented creation and tuning of the final model](Finalmodel_notebook.md). You may also be interested in [our alternative models that were discarded](Modelgraveyard_notebook.md).
