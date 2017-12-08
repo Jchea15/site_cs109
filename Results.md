@@ -51,7 +51,7 @@ All twos class. accuracy, test:  0.163157894737
 
 Gradient Boost with PCA and CV class. accuracy, train:  1.0
 
-Gradient Boost with PCA and CV class. accuracy, test:  0.468421052632
+__Gradient Boost with PCA and CV class. accuracy, test:  0.468421052632__
 
 Gradient Boost with PCA and CV class. accuracy, improved DX:  0.333333333333
 
@@ -62,6 +62,8 @@ Showing that our model does significantly better than any of the "lazy" models o
 We then took this model a step further and implemented a cost-minimizing abstention feature.
 
 We tested out our gradient boosted Decision Tree using PCA on the data we had left out, and saw that we couldn't our model captured a moment in time, and not progressing data. Our accuracy for the patients who's diagnosis improved was 0.33, and the accuracy for patients who's diagnosis got worse was 0.39. This shows that our model does not capture longitudinalness.
+
+While the model does provide a diagnosis for all patients, the model is not equally 'certain' of all of its diagnoses. For that reason, we also provided the model with the ability to abstain from a particular decision, choosing thresholds based on cross-validation and a cost function rather than accuracy as well as iterating through ever-smaller windows in order to fine-tune thresholds out to five decimal points; for more information on the thresholds selected, please see [the abstaining section on our Models overview](Models.md).
 
 To view our process, please see [our final model building documentation](Finalmodel_notebook.md).
 
