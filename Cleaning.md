@@ -27,21 +27,21 @@ Below is a table describing the features contained in the ADNIMERGE dataset. 'bl
 
 | Feature                                  | Description                              | Purpose                          |
 | ---------------------------------------- | ---------------------------------------- | -------------------------------- |
-| FDG, FDG_bl                              | average 18F-fluorodeoxyglucose position emission tomography (PET) | imaging for beta amyloid plaques |
-| PIB, PIB_bl                              | Pittsburg compound B (PET radio tracer) standard uptake value ratio | imaging for beta amyloid plaques |
-| AV45, AV45_bl                            | 18F-AV-45 (florbetapir) (PET radio tracer) standard uptake value ratio | imaging for beta amyloid plaques |
-| CDRSB                                    | Clinical Dementia Rating Scale: Sum of Boxes, a measurement of dementia | cognitive tests for dementia     |
-| ADAS11, ADAS13, ADAS11_bl, ADAS13_bl     | Alzheimer's Disease Assessment Scale, 11 or 13 items questionnaire | cognitive tests for dementia     |
-| MMSE, MMSE_bl                            | mini mental state examination, tests memory, attention, and language | cognitive tests for dementia     |
-| RAVLT_immediate, RAVLT_learning, RAVLT_forgetting, RALVT_perc_forgetting, all aforementioned \_bl | Rey Auditory Verbal Learning Test, examining short-term and longer-term verbal memory | cognitive tests for dementia     |
-| FAQ, FAQ_bl                              | function activities questionnaires, which tests daily activities such as remembering appointments | cognitive tests for dementia     |
-| MOCA, MOCA_bl                            | Montreal Cognitive Assessment            | cognitive tests for dementia     |
-| EcogPtMem, EcogPtLang, EcogPtVisspat, EcogPtPlan, EcogPtOrgan, EcogPtDivatt, EcogPtTotal, all aforementioned \_bl | Every Cognition tests as reported by the patient, which respectively test abilities in memory, language, visual-spatial, planning, organising, dividing attention | cognitive tests for dementia     |
-| EcogSPMem, EcogSPLang, EcogSPVisspat, EcogSPPlan, EcogSPOrgan, EcogSPDivatt, EcogSPTotal, all aforementioned \_bl | Every Cognition, as reported by a study partner rather than the patient themself | cognitive tests for dementia     |
-| FLDSTRENG                                | the field strength of the MRI used, either 1.5T or 3T | MRI-related                      |
-| FSVERSION                                | another measure of field strength; FreeSurfer version | MRI-related                      |
-| Ventricles, Hippocampus, WholeBrain, Entorhinal, Fusiform, MidTemp, ICV, all aforementioned \_bl | a metric of volume and cortical thickness for these regions of the brain | MRI-related                      |
-| DX                                       | diagnosis (0 = cognitively normal, 1 = mild cognitive impaired, 2 = dementia) | the official diagnosis           |
+| FDG, FDG_bl                              | Average 18F-fluorodeoxyglucose position emission tomography (PET) | Imaging for beta amyloid plaques |
+| PIB, PIB_bl                              | Pittsburg compound B (PET radio tracer) standard uptake value ratio | Imaging for beta amyloid plaques |
+| AV45, AV45_bl                            | 18F-AV-45 (florbetapir) (PET radio tracer) standard uptake value ratio | Imaging for beta amyloid plaques |
+| CDRSB                                    | Clinical Dementia Rating Scale: Sum of Boxes - a measurement of dementia | Cognitive tests for dementia     |
+| ADAS11, ADAS13, ADAS11_bl, ADAS13_bl     | Alzheimer's Disease Assessment Scale - 11 or 13 items questionnaire | Cognitive tests for dementia     |
+| MMSE, MMSE_bl                            | Mini Mental State Examination - tests memory, attention, and language | Cognitive tests for dementia     |
+| RAVLT_immediate, RAVLT_learning, RAVLT_forgetting, RALVT_perc_forgetting, all aforementioned \_bl | Rey Auditory Verbal Learning Test - examines short-term and longer-term verbal memory | Cognitive tests for dementia     |
+| FAQ, FAQ_bl                              | Function Activities Questionnaires - tests daily activities such as remembering appointments | Cognitive tests for dementia     |
+| MOCA, MOCA_bl                            | Montreal Cognitive Assessment            | Cognitive tests for dementia     |
+| EcogPtMem, EcogPtLang, EcogPtVisspat, EcogPtPlan, EcogPtOrgan, EcogPtDivatt, EcogPtTotal, all aforementioned \_bl | Everyday Cognition tests as reported by the patient - tests abilities in memory, language, visual-spatial, planning, organizing, dividing attention | Cognitive tests for dementia     |
+| EcogSPMem, EcogSPLang, EcogSPVisspat, EcogSPPlan, EcogSPOrgan, EcogSPDivatt, EcogSPTotal, all aforementioned \_bl | Everyday Cognition tests as reported by a study partner rather than the patient | Cognitive tests for dementia     |
+| FLDSTRENG                                | Field strength of MRI used, either 1.5T or 3T | MRI-related                      |
+| FSVERSION                                | Another measure of field strength; FreeSurfer version | MRI-related                      |
+| Ventricles, Hippocampus, WholeBrain, Entorhinal, Fusiform, MidTemp, ICV, all aforementioned \_bl | Metric of volume and cortical thickness for these regions of the brain | MRI-related                      |
+| DX                                       | Diagnosis (0 = cognitively normal, 1 = mild cognitive impaired, 2 = dementia) | Official diagnosis               |
 
 
 Missingness and mindfulness
@@ -55,7 +55,7 @@ Following this, patients with one or two cognitive tests missing were imputed us
 
 To determine which genes' expression levels were correlated with a diagnosis of Alzheimer's dementia, the correlation of each gene to each cognitive test (and diagnosis) was calculated. These values were then summed across the response variables in order to determine which genes were most highly correlated with gene expression. The genes whose correlations yielded a p value under .01 were used to build the model in order to reduce dimensionality. Below is a histogram of the frequency of genes with a correlation standard deviations.
 
-![corr_hist](images/Cleaning_hist.png)
+![corr_hist](images/Cleaning_hist_small.png)
 
 The final thing we had to keep in mind was that gene expression likely corresponds to the *progression* of the disease as well. As such, we created a new column to track the change from the visit where gene expression data was collected to the final diagnosis. By doing so, we were able to control for variations in gene expression between individuals who either progressed or regressed in mental capacity. Thus, our models were only trained on the patients whose diagnosis did not change from diagnosis at the gene expression visit.
 
