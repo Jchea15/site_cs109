@@ -1,7 +1,7 @@
 Discarded models: Jupyter notebook
 ===================
 
-[Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/Model%20Graveyard.ipynb)
+[Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/Modelgraveyardnew.ipynb)
 
 ```python
 %matplotlib inline
@@ -43,10 +43,10 @@ from my_functions import make_dict
 
 
 ```python
-cd ~/Documents/GitHub/Data_Proj
+cd ~/Desktop/CS109/Data
 ```
 
-    C:\Users\Jackie\Documents\GitHub\Data_Proj
+    /Users/Leah/Desktop/CS109/Data
     
 
 
@@ -706,13 +706,13 @@ pre_X_train['class'] = pre_y_train
 pre_X_test['class'] = pre_y_test
 ```
 
-    C:\Users\Jackie\Anaconda3\lib\site-packages\ipykernel_launcher.py:6: SettingWithCopyWarning: 
+    /anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:6: SettingWithCopyWarning: 
     A value is trying to be set on a copy of a slice from a DataFrame.
     Try using .loc[row_indexer,col_indexer] = value instead
     
     See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
       
-    C:\Users\Jackie\Anaconda3\lib\site-packages\ipykernel_launcher.py:7: SettingWithCopyWarning: 
+    /anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:7: SettingWithCopyWarning: 
     A value is trying to be set on a copy of a slice from a DataFrame.
     Try using .loc[row_indexer,col_indexer] = value instead
     
@@ -795,27 +795,12 @@ print('Random class. accuracy, test: ', accuracy_score(y_test, rand['test_pred']
 ```python
 # fit logistic regression model
 lin_class = {}
-lin_class['logit_ovr'] = LogisticRegressionCV(Cs=7, penalty='l2', random_state = 9001, multi_class='ovr')
-lin_class['logit_ovr'].fit(X_train, y_train)
-
-# classify
-lin_class['logit_ovr_train'] = lin_class['logit_ovr'].predict(X_train)
-lin_class['logit_ovr_test'] = lin_class['logit_ovr'].predict(X_test)
-
-# fit logistic regression model
 lin_class['logit_multinomial'] = LogisticRegressionCV(Cs=7, penalty='l2', random_state = 9001, multi_class='multinomial')
 lin_class['logit_multinomial'].fit(X_train, y_train)
 
 # classify
 lin_class['logit_multinomial_train'] = lin_class['logit_multinomial'].predict(X_train)
 lin_class['logit_multinomial_test'] = lin_class['logit_multinomial'].predict(X_test)
-
-# LDA
-lda = {}
-lda['model'] = discriminant_analysis.LinearDiscriminantAnalysis()
-lda['model'].fit(X_train, y_train)
-lda['train_pred'] = lda['model'].predict(X_train)
-lda['test_pred'] = lda['model'].predict(X_test)
 
 # QDA
 qda = {}
@@ -844,19 +829,15 @@ knn['train_pred'] = knn['model'].predict(X_train)
 knn['test_pred'] = knn['model'].predict(X_test)
 ```
 
-    C:\Users\Jackie\Anaconda3\lib\site-packages\sklearn\discriminant_analysis.py:695: UserWarning: Variables are collinear
+    /anaconda/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:695: UserWarning: Variables are collinear
       warnings.warn("Variables are collinear")
     
 
 
 ```python
 # print all classification accuracies
-print('Logistic OvR class. accuracy, train: ', accuracy_score(y_train, lin_class['logit_ovr_train']))
-print('Logistic OvR class. accuracy, test: ', accuracy_score(y_test, lin_class['logit_ovr_test']))
 print('Logistic multinomial class. accuracy, train: ', accuracy_score(y_train, lin_class['logit_multinomial_train']))
 print('Logistic multinomial class. accuracy, test: ', accuracy_score(y_test, lin_class['logit_multinomial_test']))
-print('LDA class. accuracy, train: ', accuracy_score(y_train, lda['train_pred']))
-print('LDA class. accuracy, test: ', accuracy_score(y_test, lda['test_pred']))
 print('QDA class. accuracy, train: ', accuracy_score(y_train, qda['train_pred']))
 print('QDA class. accuracy, test: ', accuracy_score(y_test, qda['test_pred']))
 print('KNN class. accuracy, train: ', accuracy_score(y_train, knn['train_pred']))
@@ -865,12 +846,8 @@ print('Random class. accuracy, train: ', accuracy_score(y_train, rand['train_pre
 print('Random class. accuracy, test: ', accuracy_score(y_test, rand['test_pred']))
 ```
 
-    Logistic OvR class. accuracy, train:  0.635294117647
-    Logistic OvR class. accuracy, test:  0.468421052632
-    Logistic multinomial class. accuracy, train:  0.770588235294
+    Logistic multinomial class. accuracy, train:  0.752941176471
     Logistic multinomial class. accuracy, test:  0.347368421053
-    LDA class. accuracy, train:  0.611764705882
-    LDA class. accuracy, test:  0.473684210526
     QDA class. accuracy, train:  0.888235294118
     QDA class. accuracy, test:  0.426315789474
     KNN class. accuracy, train:  0.723529411765
@@ -952,4 +929,5 @@ print('Tree class. accuracy, test: ', accuracy_score(dt_class["ytest"], cv_dt.pr
     
 
 
-![png](Model%20Graveyard_files/Model%20Graveyard_27_1.png)
+![png](Modelgraveyardnew_files/Modelgraveyardnew_27_1.png)
+
