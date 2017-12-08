@@ -49,7 +49,7 @@ Missingness and mindfulness
 
 Given the small sample size, it is critical that missing cognitive tests be imputed. However, for 8 patients, all cognitive tests were missing . This would make imputing the value of cognitive tests completely random, and thus useless. All of these patients were dropped. The table below shows the index of patients with missing values, as well as the number of missing values and the feature names. 
 
-![corr_table](images/Cleaning_table_small.png)
+![corr_table](images/Cleaning_table_med.png)
 
 Following this, patients with one or two cognitive tests missing were imputed using the values of the other cognitive tests. In order to avoid imputation from harming the performance of our model, any feature which could not be imputed with an R^2 value of greater than .5 was dropped. 
 
