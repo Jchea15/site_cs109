@@ -6,6 +6,7 @@ title: Alzheimer's through Gene Expression
 >*"Did we just cure Alzheimer's?" -- our group, right before we realized we had not.*
 
 Group number: 69
+
 Group members: Jackie Chea, Nike Izmaylov, Nick Pagel, Leah Rosen
 
 For some patients, gene expression tests, particularly for a small number of targeted genes, may be relatively inexpensive and less invasive compared to traditional methods such as radiolabeled PET scans. This project seeks to use targetted gene expression data to help reduce the costs of diagnosing Alzheimer's dementia and aid in earlier detection. Given that Alzheimer's disease is the third leading cause of death in the elderly, early detection is critical to limiting its rate of progression. 
