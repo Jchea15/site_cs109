@@ -1,13 +1,15 @@
 Modelling with PCA, Gradientboost, and Abstaining: Jupyter notebook
 ===================
 
-[Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/Final%20Model.ipynb)	
+[Download this notebook here.](https://raw.githubusercontent.com/Pagel56/site_cs109/master/notebooks/Final_Model_J.ipynb)	
+
+
 
 ```python
-cd ~/Desktop/proj_cs109/Data
+cd ~/Documents/GitHub/Data_Proj
 ```
 
-    /Users/Nick/Desktop/proj_cs109/Data
+    C:\Users\Jackie\Documents\GitHub\Data_Proj
     
 
 
@@ -97,19 +99,19 @@ df_full.dtypes.to_csv('poly_interactions_columntypes.txt')
 firstpoly = df_full.columns.get_loc('DX_Final_Rate') + 1
 
 # remove rows where diagnosis changes
-df_full_removed = df_full[df_full['DX_Final_Progression'] != 0]
-df_full_removed.to_csv('df_full_removed.csv')
-df_full = df_full[df_full['DX_Final_Progression'] == 0]
+df_reg = df_full[df_full['DX_Final_Progression'] < 0]
+df_prog = df_full[df_full['DX_Final_Progression'] > 0]
+df_same = df_full[df_full['DX_Final_Progression'] == 0]
 
 #original genes and new poly/interaction terms
 temp_genes = used_genes.copy()
 full_genes = temp_genes + list(df_full.columns[firstpoly:].values)
-X_full = df_full[full_genes]
-y_full = df_full['DX']
-X_full_removed = df_full_removed[full_genes]
-y_full_removed = df_full_removed['DX']
-X_full_removed.to_csv('X_full_removed.csv')
-y_full_removed.to_csv('y_full_removed.csv')
+X_full = df_same[full_genes]
+y_full = df_same['DX']
+X_prog = df_prog[full_genes]
+y_prog = df_prog['DX']
+X_reg = df_reg[full_genes]
+y_reg = df_reg['DX']
 
 # split into train and test
 np.random.seed(9001)
@@ -140,30 +142,27 @@ twos['train_pred'] = [2] * len(X_train)
 twos['test_pred'] = [2] * len(X_test)
 twos['model'] = np.ones(len(X_test))*2
 
-pre_X_train = X_train
-pre_X_test = X_test
-pre_X_train['class'] = y_train
-pre_X_test['class'] = y_test
-
 # PCA with all components
 pca_full_fit = PCA()
 pca_full = {}
-pca_full['Xtrain'] = pca_full_fit.fit_transform(pre_X_train)
+pca_full['Xtrain'] = pca_full_fit.fit_transform(X_train)
+pca_full['Xtest'] = pca_full_fit.fit_transform(X_train)
 
 # find number of components that explain 90% of predictor variance
 n_components = (np.argwhere((np.cumsum(pca_full_fit.explained_variance_ratio_)) > 0.9)[0] + 1)[0]
-
 # PCA with 90% of variance explained
 pca90 = {}
 pca90_fit = PCA(n_components, random_state = 9001)
-pca90_fit.fit(pre_X_train)
-X_train = pca90_fit.transform(pre_X_train)
-X_test = pca90_fit.transform(pre_X_test)
+pca90_fit.fit(X_train)
+X_train = pca90_fit.transform(X_train)
+X_test = pca90_fit.transform(X_test)
+X_reg = pca90_fit.transform(X_reg)
+X_prog = pca90_fit.transform(X_prog)
 
 # run cv on multiple parameters in gradient boosting
 param_dict = OrderedDict(
     max_depth = range(1,20),
-    n_estimators = range(1,20),
+    n_estimators = range(1,200,20),
     learning_rate = np.arange(0.05,1,0.05)
 )
 est = GradientBoostingClassifier(random_state = 9001)
@@ -184,23 +183,13 @@ print('All twos class. accuracy, train: ', accuracy_score(y_train, twos['train_p
 print('All twos class. accuracy, test: ', accuracy_score(y_test, twos['test_pred']))
 print('Gradient Boost with PCA and CV class. accuracy, train: ', metrics.accuracy_score(y_train, gb_cv.best_estimator_.fit(X_train, y_train).predict(X_train)))
 print('Gradient Boost with PCA and CV class. accuracy, test: ', metrics.accuracy_score(y_test, gb_cv.best_estimator_.fit(X_train, y_train).predict(X_test)))
+print('Gradient Boost with PCA and CV class. accuracy, improved DX: ', metrics.accuracy_score(y_reg, gb_cv.best_estimator_.fit(X_train, y_train).predict(X_reg)))
+print('Gradient Boost with PCA and CV class. accuracy, worsened DX: ', metrics.accuracy_score(y_prog, gb_cv.best_estimator_.fit(X_train, y_train).predict(X_prog)))
+
+
 ```
 
-    99.481865%
-
-    /Users/Nick/anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:96: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame.
-    Try using .loc[row_indexer,col_indexer] = value instead
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    /Users/Nick/anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:97: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame.
-    Try using .loc[row_indexer,col_indexer] = value instead
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    
-
-    Random class. accuracy, train:  0.305882352941
+    99.481865%Random class. accuracy, train:  0.305882352941
     Random class. accuracy, test:  0.373684210526
     All zeros class. accuracy, train:  0.411764705882
     All zeros class. accuracy, test:  0.415789473684
@@ -208,8 +197,10 @@ print('Gradient Boost with PCA and CV class. accuracy, test: ', metrics.accuracy
     All ones class. accuracy, test:  0.421052631579
     All twos class. accuracy, train:  0.188235294118
     All twos class. accuracy, test:  0.163157894737
-    Gradient Boost with PCA and CV class. accuracy, train:  0.888235294118
-    Gradient Boost with PCA and CV class. accuracy, test:  0.421052631579
+    Gradient Boost with PCA and CV class. accuracy, train:  0.923529411765
+    Gradient Boost with PCA and CV class. accuracy, test:  0.463157894737
+    Gradient Boost with PCA and CV class. accuracy, improved DX:  0.333333333333
+    Gradient Boost with PCA and CV class. accuracy, worsened DX:  0.439393939394
     
 
 
@@ -231,10 +222,10 @@ data_train = df[msk]
 data_test = df[~msk]
 data = {}
 models = {}
-data['alz'] = {'xtrain' : data_train.drop('DX', axis = 1).values,
-               'ytrain' : data_train['DX'].values,
-               'xtest' : data_test.drop('DX', axis = 1).values,
-               'ytest' : data_test['DX'].values}
+data['alz'] = {'xtrain' : X_train,
+               'ytrain' : list(y_train + 1),
+               'xtest' : X_test,
+               'ytest' : list(y_train + 1)}
 ```
 
 
@@ -455,7 +446,7 @@ models = {}
 #get best model
 bm = gb_cv.best_estimator_
 
-index = 0
+index = 1
 n_models = 5
 fold = 0
 ab_models = []
@@ -497,7 +488,7 @@ for train, valid in KFold(n_models, shuffle = True, random_state = 9001).split(d
     index = for_loop_status(n_models, index)
 ```
 
-    80.000000%
+    100.000000%
 
 
 ```python
@@ -512,7 +503,7 @@ n_thresh = 11
 cn_thresholds = list(np.linspace(start_cn, stop_cn, n_thresh))
 mci_thresholds = list(np.linspace(start_mci, stop_mci, n_thresh))
 dementia_thresholds = list(np.linspace(start_dementia, stop_dementia, n_thresh))
-index = 0
+index = 1
 print('done!\t\tmci\tdem\tcn\tcost\tacc\tpercent')
 length = length = len(cn_thresholds) * len(mci_thresholds) * len(dementia_thresholds) * (iteration_max)
 for iteration in range(1,iteration_max + 1):
@@ -599,11 +590,11 @@ for iteration in range(1,iteration_max + 1):
 ```
 
     done!		mci	dem	cn	cost	acc	percent
-    19.984974%	0.7000	1.0000	1.0000	6173.51	0.8502	0.3612
-    39.984974%	0.7400	1.0000	0.9800	6133.70	0.8642	0.3424
-    59.984974%	0.7320	0.9968	0.9800	6133.70	0.8642	0.3424
-    79.984974%	0.7312	0.9958	0.9784	6133.70	0.8642	0.3424
-    99.984974%	0.7312	0.9958	0.9781	6133.70	0.8642	0.3424
+    20.000000%	0.6000	1.0000	0.7000	6332.41	0.7000	0.6011
+    40.000000%	0.5800	0.9840	0.7000	6259.84	0.6952	0.6200
+    60.000000%	0.5840	0.9824	0.7000	6235.32	0.7000	0.6153
+    80.000000%	0.5808	0.9814	0.6984	6235.32	0.7000	0.6153
+    100.000000%	0.5805	0.9813	0.6979	6235.32	0.7000	0.6153
     
 
 
@@ -623,10 +614,17 @@ y_probs = models[name].predict_proba(data['alz']['xtest'])
 #since the original probabilities are stored in a matrix
 y_prob = []
 for i in range(0,len(y_pred)):
-    y_prob.append(y_probs[i][y_pred[i] - 1])
+    y_prob.append(y_probs[i][int(y_pred[i] - 1)])
 final_model = ab_model(name, y_pred, y_prob, thresh_models[min_name]['mci_thresh'], thresh_models[min_name]['dementia_thresh'], thresh_models[min_name]['cn_thresh'])
-print('The cost per patient for the model set with thresholds is: ${0:.2f} and classification accuracy is {1:.2f} and % diagnosed is {2:.2f}.'.format(final_model['cost'], final_model['acc'], final_model['percent']))
+print('The cost per patient for the model with thresholds is: ${0:.2f} and classification accuracy is {1:.2f} and % diagnosed is {2:.2f}.'.format(final_model['cost'], final_model['acc'], final_model['percent']))
+final_model_no_thresh = ab_model(name, y_pred, y_prob, 0, 0, 0)
+print('The cost per patient for the model without thresholds is: ${0:.2f} and classification accuracy is {1:.2f} and % diagnosed is {2:.2f}.'.format(final_model_no_thresh['cost'], final_model_no_thresh['acc'], final_model_no_thresh['percent']))
+print('The cost per patient for the all-ones classifier is: ${0:.2f} and classification accuracy is {1:.2f}.'.format(calc_cost(list(y_test), twos['test_pred'], ab_class = 4), class_acc(list(y_test), twos['test_pred'])))
 ```
 
-    The cost per patient for the model set with thresholds is: $6776.32 and classification accuracy is 0.89 and % diagnosed is 0.21.
+    The cost per patient for the model with thresholds is: $6801.47 and classification accuracy is 0.87 and % diagnosed is 0.27.
+    The cost per patient for the model without thresholds is: $7764.71 and classification accuracy is 0.46 and % diagnosed is 1.00.
+    The cost per patient for the all-ones classifier is: $10042.11 and classification accuracy is 0.16.
+    
+
     
