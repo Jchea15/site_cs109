@@ -18,7 +18,7 @@ APOE4 and TOMM40
 TOMM40 and APOE are genes that are known to be associated with Alzheimer’s. Specifically, according to the ADNI website, “the epsilon 4 allele of APOE is the strongest known genetic risk factor for AD with a two- to three-fold increased risk for AD in people with one epsilon 4 allele rising to about 12-fold in those with two alleles.” <sup>[2](#myfootnote2)</sup> Additionally, a previous paper based on analysing ADNI genetic data found TOMM40 to be a risk gene.<sup>[3](#myfootnote3)</sup> However, these genes are risk factors at a genomic level - i.e. depending on allele. We are interested in looking at the gene expression level, which reflects both different environmental factors, as well as upstream genomic mutations.
 
 
-May I unzip your genes?
+Let's unzip those genes?
 -------------
 We did more literature review to validate that the genes we identified were indeed significant. This review is in [the final results page](Results.md)
 
