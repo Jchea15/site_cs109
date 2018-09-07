@@ -1,3 +1,21 @@
+## Predicting Alzheimer's through Gene Expression
+Class project for CS109a, Fall 2017 by Jacqueline Chea, Nike Izmaylov, Nick Pagel, and Leah Rosen.
+
+Using gene expression data from a neuroimaging database, we built 5 models to predict diagnosis of Alzheimer's dementia, evaluated them to identify AdaBoost with PCA and cross-validation on the number of estimators as the best model, and implemented abstention to reduce misdiagnosis frequency.
+
+To read through our project, the order of the pages is:
+* index.md
+* Problem.md
+* Data.md
+* Cleaning.md
+* Literature.md
+* Models.md
+* Results.md
+
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Jchea15/site_cs109/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
